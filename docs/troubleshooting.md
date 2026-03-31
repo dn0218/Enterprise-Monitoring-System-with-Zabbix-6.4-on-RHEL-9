@@ -73,27 +73,3 @@ Installed:
 
 Complete!
 
-
-### **2. SELinux Policy Hardening**
-enabled specific permissions for the Zabbix stack
-
-setsebool -P httpd_can_connect_zabbix on
-setsebool -P zabbix_can_network on
-
-Case Study: Real-World Troubleshooting
-Scenario: The ZBX availability icon was Red for the Rocky 10 node.
-
-
-**Step-by-Step Debugging:**
-
-Connectivity Check: Used zabbix_get from the server:
-
-Error: Connection refused (111)
-
-Service Verification: Checked status on Agent node:
-
-Finding: zabbix-agent2.service was inactive.
-
-Resolution: Started the service and enabled it on boot.
-
-Result: Icon turned Green and metrics began flowing.
