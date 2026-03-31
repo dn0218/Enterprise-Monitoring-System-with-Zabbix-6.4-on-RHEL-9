@@ -100,6 +100,56 @@ Created symlink /etc/systemd/system/multi-user.target.wants/zabbix-agent.service
 Created symlink /etc/systemd/system/multi-user.target.wants/httpd.service → /usr/lib/systemd/system/httpd.service.
 Created symlink /etc/systemd/system/multi-user.target.wants/php-fpm.service → /usr/lib/systemd/system/php-fpm.service.
 
+🖥️ Agent Setup (Rocky Linux 10)
+
+**Install Agent 2**
+
+danny@rocky:~$ sudo rpm -Uvh https://repo.zabbix.com/zabbix/6.4/rhel/9/x86_64/zabbix-release-6.4-1.el9.noarch.rpm
+[sudo] password for danny: 
+Retrieving https://repo.zabbix.com/zabbix/6.4/rhel/9/x86_64/zabbix-release-6.4-1.el9.noarch.rpm
+warning: /var/tmp/rpm-tmp.jhS4tq: Header V4 RSA/SHA512 Signature, key ID 08efa7dd: NOKEY
+Verifying...                          ################################# [100%]
+Preparing...                          ################################# [100%]
+Updating / installing...
+   1:zabbix-release-6.4-1.el9         ################################# [100%]
+danny@rocky:~$ sudo dnf install zabbix-agent2 -y
+Rocky Linux 10 - BaseOS                            858  B/s | 4.3 kB     00:05    
+Rocky Linux 10 - AppStream                         667  B/s | 4.3 kB     00:06    
+Rocky Linux 10 - AppStream                         1.3 MB/s | 2.3 MB     00:01    
+Rocky Linux 10 - Extras                            2.6 kB/s | 3.1 kB     00:01    
+Rocky Linux 10 - Extras                            4.9 kB/s | 6.0 kB     00:01    
+Zabbix Official Repository - x86_64                 13 kB/s |  58 kB     00:04    
+Zabbix Official Repository non-supported - x86_64  354  B/s | 782  B     00:02    
+Dependencies resolved.
+
+**Configure Agent**
+sudo vi /etc/zabbix/zabbix_agent2.conf
+
+#Server=<Zabbix_Server_IP>
+#ServerActive=<Zabbix_Server_IP>
+#Hostname=<Your_Hostname>
+
+**Start Agent**
+sudo systemctl enable --now zabbix-agent2
+
+🔐 Security Hardening 
+**SELinux Configuration**
+[danny@rhel /]$ sudo setsebool -P httpd_can_connect_zabbix on
+[danny@rhel /]$ sudo setsebool -P httpd_can_network_connect_db on
+[danny@rhel /]$ ls -dZ /etc/zabbix/
+system_u:object_r:etc_t:s0 /etc/zabbix/
+
+**Firewall Configuration**
+[danny@rhel /]$ sudo firewall-cmd --add-service={http,https} --permanent
+Warning: ALREADY_ENABLED: http
+Warning: ALREADY_ENABLED: https
+success
+[danny@rhel /]$ sudo firewall-cmd --add-port=10051/tcp --permanent
+success
+[danny@rhel /]$ sudo firewall-cmd --reload
+success
+
+🌐 Web Setup
 
 
 
