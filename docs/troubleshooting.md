@@ -11,7 +11,7 @@ Error: GPG check FAILED
 ```
 
 **Solution Example:**
-````bash 
+```bash 
 danny@rocky:~$ sudo rpm -q gpg-pubkey --qf '%{NAME}-%{VERSION}-%{RELEASE}\t%{SUMMARY}\n' | grep -i zabbix
 gpg-pubkey-08efa7dd-62c42363	Zabbix LLC (Jul 2022) <packager@zabbix.com> public key
 ```
