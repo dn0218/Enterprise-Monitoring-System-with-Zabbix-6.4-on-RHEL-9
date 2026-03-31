@@ -23,21 +23,3 @@ The setup follows the **Principle of Least Privilege**:
 
 ---
 
-## 🚀 Deployment Highlights
-
-### 1. Handling GPG Key Expiration (Production Issue)
-During the installation on RHEL/Rocky, I encountered a GPG signature verification failure (Expired July 2024). 
-**Solution:**
-```bash
-sudo rpm --import [https://repo.zabbix.com/RPM-GPG-KEY-ZABBIX-08EFA7DD](https://repo.zabbix.com/RPM-GPG-KEY-ZABBIX-08EFA7DD)
-sudo dnf clean all
-
-2. SELinux Policy Hardening
-enabled specific permissions for the Zabbix stack
-
-setsebool -P httpd_can_connect_zabbix on
-setsebool -P zabbix_can_network on
-
-Case Study: Real-World Troubleshooting
-Scenario: The ZBX availability icon was Red for the Rocky 10 node.
-
