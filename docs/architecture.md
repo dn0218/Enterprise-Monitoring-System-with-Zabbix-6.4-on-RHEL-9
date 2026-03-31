@@ -102,8 +102,9 @@ Created symlink /etc/systemd/system/multi-user.target.wants/php-fpm.service → 
 
 🖥️ Agent Setup (Rocky Linux 10)
 
-**Install Agent 2**
+## Install Agent 2
 
+```bash
 danny@rocky:~$ sudo rpm -Uvh https://repo.zabbix.com/zabbix/6.4/rhel/9/x86_64/zabbix-release-6.4-1.el9.noarch.rpm
 [sudo] password for danny: 
 Retrieving https://repo.zabbix.com/zabbix/6.4/rhel/9/x86_64/zabbix-release-6.4-1.el9.noarch.rpm
@@ -112,6 +113,7 @@ Verifying...                          ################################# [100%]
 Preparing...                          ################################# [100%]
 Updating / installing...
    1:zabbix-release-6.4-1.el9         ################################# [100%]
+
 danny@rocky:~$ sudo dnf install zabbix-agent2 -y
 Rocky Linux 10 - BaseOS                            858  B/s | 4.3 kB     00:05    
 Rocky Linux 10 - AppStream                         667  B/s | 4.3 kB     00:06    
