@@ -150,8 +150,36 @@ success
 success
 
 🌐 Web Setup
+Access:
+http://<server-ip>/zabbix
+<img width="884" height="582" alt="Screenshot 2026-03-31 112905" src="https://github.com/user-attachments/assets/b5859ab9-4aec-4a88-8780-8a2463d0d7b6" />
+<img width="968" height="590" alt="Screenshot 2026-03-31 113011" src="https://github.com/user-attachments/assets/45927dec-823e-4e36-8f8e-f1bc78a4a48b" />
+<img width="908" height="558" alt="Screenshot 2026-03-31 113038" src="https://github.com/user-attachments/assets/c02a28b4-2102-450a-bedb-84bb99563688" />
+<img width="926" height="568" alt="Screenshot 2026-03-31 112637" src="https://github.com/user-attachments/assets/da718e87-ae86-4005-953a-913f01874acf" />
+<img width="913" height="544" alt="Screenshot 2026-03-31 112817" src="https://github.com/user-attachments/assets/6ccbad41-bd4d-442c-80a1-e25b6efa4a89" />
+<img width="913" height="542" alt="Screenshot 2026-03-31 112831" src="https://github.com/user-attachments/assets/104a3785-1842-4707-a64a-92cd76f51fa1" />
 
+Steps:
+Check prerequisites
+Configure DB connection
+Complete installation
 
+✅ Verification on Client and Server
+systemctl status zabbix-server
+systemctl status zabbix-agent2
 
+💡 Key Skills Demonstrated
+1. RHEL 9 system administration
+2. SELinux tuning
+3. Firewalld configuration
+4. LAMP stack deployment
+5. Monitoring system architecture
+6. Troubleshooting and service management
+
+📚 Future Improvements
+1. Add HTTPS (Let's Encrypt)
+2. Add Zabbix Proxy
+3.High Availability setup
+4. Automation with Ansible
 
 
