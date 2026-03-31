@@ -74,7 +74,7 @@ Installed:
 Complete!
 
 
-2. SELinux Policy Hardening
+### **2. SELinux Policy Hardening**
 enabled specific permissions for the Zabbix stack
 
 setsebool -P httpd_can_connect_zabbix on
