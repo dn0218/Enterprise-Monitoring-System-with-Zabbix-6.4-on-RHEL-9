@@ -166,24 +166,34 @@ success
 [danny@rhel /]$ sudo firewall-cmd --reload
 success
 ```
-🌐 Web Setup
+## 🌐 Web Setup
 Access:
 http://<server-ip>/zabbix
-<img width="884" height="582" alt="Screenshot 2026-03-31 112905" src="https://github.com/user-attachments/assets/b5859ab9-4aec-4a88-8780-8a2463d0d7b6" />
-<img width="968" height="590" alt="Screenshot 2026-03-31 113011" src="https://github.com/user-attachments/assets/45927dec-823e-4e36-8f8e-f1bc78a4a48b" />
-<img width="908" height="558" alt="Screenshot 2026-03-31 113038" src="https://github.com/user-attachments/assets/c02a28b4-2102-450a-bedb-84bb99563688" />
-<img width="926" height="568" alt="Screenshot 2026-03-31 112637" src="https://github.com/user-attachments/assets/da718e87-ae86-4005-953a-913f01874acf" />
-<img width="913" height="544" alt="Screenshot 2026-03-31 112817" src="https://github.com/user-attachments/assets/6ccbad41-bd4d-442c-80a1-e25b6efa4a89" />
-<img width="913" height="542" alt="Screenshot 2026-03-31 112831" src="https://github.com/user-attachments/assets/104a3785-1842-4707-a64a-92cd76f51fa1" />
+<img width="926" height="568" alt="Screenshot 2026-03-31 112637" src="https://github.com/user-attachments/assets/4c1bf227-daab-4ed2-acb3-fbc0b4f815fc" />
 
 Steps:
 Check prerequisites
+<img width="913" height="544" alt="Screenshot 2026-03-31 112817" src="https://github.com/user-attachments/assets/14bbf5ee-1fda-4a3d-be7a-5922ac435a6d" />
+<img width="913" height="542" alt="Screenshot 2026-03-31 112831" src="https://github.com/user-attachments/assets/b6f45651-d95a-47e0-9560-0f06c6c86370" />
 Configure DB connection
+<img width="884" height="582" alt="Screenshot 2026-03-31 112905" src="https://github.com/user-attachments/assets/1d605ded-3db1-4471-a2b2-03c06dee742f" />
+Settings
+<img width="968" height="590" alt="Screenshot 2026-03-31 113011" src="https://github.com/user-attachments/assets/23c8b99f-8e4a-4d10-87e9-afeda9593637" />
+Pre-installation summary
+<img width="908" height="558" alt="Screenshot 2026-03-31 113038" src="https://github.com/user-attachments/assets/bd8e41d6-0cb1-4782-ade8-043ac5fdba64" />
 Complete installation
 
-✅ Verification on Client and Server
+## ✅ Verification on Client and Server
+```bash
 systemctl status zabbix-server
 systemctl status zabbix-agent2
+```
+
+Create new host
+<img width="1069" height="598" alt="Screenshot 2026-03-31 114041" src="https://github.com/user-attachments/assets/95a5d6b9-86f3-4000-ad7e-8b3e7a855a07" />
+
+Host available with Zabbix agent
+<img width="1702" height="524" alt="Screenshot 2026-03-31 115520" src="https://github.com/user-attachments/assets/ef413bf0-9e0b-4ffd-aa3e-e670109f64f8" />
 
 💡 Key Skills Demonstrated
 1. RHEL 9 system administration
